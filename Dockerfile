@@ -1,6 +1,5 @@
-FROM node
-WORKDIR /workdir
-COPY . .
-RUN npm install
-EXPOSE 8000
-CMD ["node", "index.js"]
+FROM nginx:alpine
+
+COPY . /usr/share/nginx/html
+
+WORKDIR /usr/share/nginx/html

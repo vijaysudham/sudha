@@ -10,17 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Download Dockerfile from external repository
-      run: |
-        curl -LJO https://raw.githubusercontent.com/external/repo/main/path/to/dockerfile
-      working-directory: path/to/your/dockerfile/directory
-
-    - name: Build Docker image
-      run: |
-        docker build -t my-docker-image .
+    
      
     - name: Run Docker container
       run: |
-        docker run -d --name my-container my-docker-image
+        docker run -d --name my-container --image=nginx
     
    
